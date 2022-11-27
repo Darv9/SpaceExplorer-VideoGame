@@ -844,6 +844,8 @@ GameObject:
   m_Component:
   - component: {fileID: 752107862}
   - component: {fileID: 752107861}
+  - component: {fileID: 752107863}
+  - component: {fileID: 752107864}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -867,11 +869,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f1d7b36bcfe3580408ed591160e4dcef, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!4 &752107862
 Transform:
   m_ObjectHideFlags: 0
@@ -889,6 +891,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &752107863
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752107860}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.96848714, y: -2.4535003}
+  m_Size: {x: 0.9648738, y: 1.9814004}
+  m_Direction: 0
+--- !u!114 &752107864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752107860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46d3780195bfe741b4f1e00b0607eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 752107861}
+  speed: 4
+  isFacingRight: 1
+  jumpTime: 0.05
+  jumpMultiplier: 1.5
+  fallMultiplier: 0.5
+  jumpPower: 4
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 192
+  groundCheck: {fileID: 2141694415}
 --- !u!1 &881840519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,8 +1132,12 @@ MonoBehaviour:
   - {fileID: 1619063220}
   - {fileID: 698149221}
   - {fileID: 2014703911}
-  enemyOnePrefabs: []
-  enemyTwoPrefabs: []
+  enemyOnePrefabs:
+  - {fileID: 6144848197659560896, guid: b1611cd253cbb524cbfb6ab6dc2dc87e, type: 3}
+  - {fileID: 5499048073028903002, guid: ae146497589310a4cbee788292c9ee53, type: 3}
+  enemyTwoPrefabs:
+  - {fileID: 6144848197659560896, guid: b1611cd253cbb524cbfb6ab6dc2dc87e, type: 3}
+  - {fileID: 5499048073028903002, guid: ae146497589310a4cbee788292c9ee53, type: 3}
   interval: 3
   maxObjectsThrow: 3
   maxMoleCount: 4
