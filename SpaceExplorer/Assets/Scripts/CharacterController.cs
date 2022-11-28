@@ -8,8 +8,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     Rigidbody2D rb;
 
-    /*[SerializeField]
-    Animator animator;*/
+    [SerializeField]
+    Animator animator;
 
     [Header("Move System")]
     [SerializeField]
@@ -136,28 +136,28 @@ public class CharacterController : MonoBehaviour
     {
         if (rb.velocity.y > 0.0F)
         {
-            /*if (animator.GetFloat("power") != 1.0F)
+            if (animator.GetFloat("power") != 1.0F)
             {
                 animator.SetFloat("power", 1.0F);
-            }*/
+            }
             grounded = false;
 
         }
         else if (rb.velocity.y < 0.0F)
         {
-            /* if (animator.GetFloat("power") != -1.0F)
+            if (animator.GetFloat("power") != -1.0F)
              {
                  animator.SetFloat("power", -1.0F);
-             }*/
+             }
             grounded = false;
         }
         else
         {
-            /*if (animator.GetFloat("speed") != Mathf.Abs(move.x))
+            if (animator.GetFloat("speed") != Mathf.Abs(move.x))
             {
                 animator.SetFloat("speed", Mathf.Abs(move.x));
-            }*/
-            //animator.ResetTrigger("grounded");
+            }
+            animator.ResetTrigger("grounded");
         }
 
         move.y = rb.velocity.y;
