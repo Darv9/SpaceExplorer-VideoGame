@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-
     [SerializeField]
     Rigidbody2D rb;
 
@@ -25,7 +24,7 @@ public class CharacterController : MonoBehaviour
     float jumpMultiplier = 1.5F;
 
     [SerializeField]
-    float fallMultiplier = 0.5F;
+    float fallMultiplier = 2.5F;
 
     bool wasFacingRight;
     Vector2 move;
@@ -47,8 +46,11 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     Transform groundCheck;
 
+
     void Start()
     {
+
+
         wasFacingRight = isFacingRight;
         reverseGravity = new Vector2(0.0F, -Physics2D.gravity.y);
 
@@ -72,6 +74,7 @@ public class CharacterController : MonoBehaviour
             //Permite el salto solamente cuando el persona esta tocando el piso
             if (isGrounded())
             {
+
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
                 jumpCounter = 0.0F;
                 isJumpPressed = true;
@@ -112,20 +115,21 @@ public class CharacterController : MonoBehaviour
 
         if (rb.velocity.y < 0.0F)
         {
-            //Para que caiga siempre con menos velocidad que el ascenso, generando el efecto de gravedad
+            //Cae con mayor velocidad que la utilizada en el ascenso
             rb.velocity -= reverseGravity * fallMultiplier * Time.deltaTime;
         }
 
         if (!grounded)
         {
 
-            //Verifica si esta tocando el piso para poder volver a saltar
+            //Verifique que el personaje esta en el piso
+            //Mediante la validacion con los colicionadores
             bool IsGrounded = isGrounded();
             if (grounded != IsGrounded)
             {
                 grounded = IsGrounded;
-                //animator.SetFloat("power", 0.0F);
-                //animator.SetTrigger("grounded");
+                animator.SetFloat("power", 0.0F);
+                animator.SetTrigger("grounded");
             }
         }
     }
@@ -146,9 +150,9 @@ public class CharacterController : MonoBehaviour
         else if (rb.velocity.y < 0.0F)
         {
             if (animator.GetFloat("power") != -1.0F)
-             {
-                 animator.SetFloat("power", -1.0F);
-             }
+            {
+                animator.SetFloat("power", -1.0F);
+            }
             grounded = false;
         }
         else
