@@ -14,7 +14,7 @@ TagManager:
   - Ground
   - Platform
   - Player
-  - Confiner
+  - 
   - 
   - 
   - 
@@ -38,12 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: ground
-    uniqueID: 799286785
-    locked: 0
-  - name: pits
-    uniqueID: 199091943
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
