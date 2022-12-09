@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:SpaceExplorer/Assets/Sprites/arbol1.png.meta
-guid: 1a26944ca2b1ac047b8f9ff3efaa4ce8
-=======
-guid: 827c8fb4d254746199ea692bd3a9d18a
->>>>>>> parent of a3b3827 (update):SpaceExplorer/Assets/Sprites/star-galaxy.gif.meta
+guid: c19e67b856a194200bd15da711c8a088
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,16 +132,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {instanceID: 0}
-      name: 1
-    - texture: {instanceID: 0}
-      name: 2
+    secondaryTextures: []
     nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
