@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ParallaxEfect : MonoBehaviour
-
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     [SerializeField] private float parallaxMutiplier;
     
@@ -16,13 +16,16 @@ public class ParallaxEfect : MonoBehaviour
     private Transform cameraTransform;
     private Vector3 previousCameraPosition;
 >>>>>>> parent of 7fd4af5 (parallax update)
+=======
+    
+    private Transform cameraTransform;//referencia al componete de transform de la camera 
+    private Vector3 previousCameraPosition;//posicion anterior de la camara
+>>>>>>> parent of a3b3827 (update)
     // Start is called before the first frame update
     void Start()
     {
         cameraTransform = Camera.main.transform;
         previousCameraPosition = cameraTransform.position;
-        spriteWidth = GetComponent<SpriteRenderer>().bounds.size.x;
-        startPosition = transform.position.x;
 
 
     }
@@ -30,6 +33,7 @@ public class ParallaxEfect : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         float deltaX = (cameraTransform.position.x - previousCameraPosition.x)* parallaxMutiplier;
         float moveAmount = cameraTransform.position.x * (1 - parallaxMutiplier);
@@ -50,5 +54,10 @@ public class ParallaxEfect : MonoBehaviour
         float deltaX = (cameraTransform.position.x - previousCameraPosition.x)*0.3f;
         transform.Translate(new Vector3(deltaX, 0, 0));
 >>>>>>> parent of 7fd4af5 (parallax update)
+=======
+        float deltaX = (cameraTransform.position.x - previousCameraPosition.x)*0.5f;
+        transform.Translate(new Vector3(deltaX, 0, 0));
+        previousCameraPosition = cameraTransform.position;
+>>>>>>> parent of a3b3827 (update)
     }
 }
