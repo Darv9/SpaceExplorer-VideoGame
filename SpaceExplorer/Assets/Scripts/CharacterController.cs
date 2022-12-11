@@ -29,6 +29,9 @@ public class CharacterController : MonoBehaviour
     bool wasFacingRight;
     Vector2 move;
 
+    Vector2 smoothedMove;
+    Vector2 smothVelocity;
+
     bool isJumpPressed;
     float jumpCounter;
 
@@ -185,7 +188,6 @@ public class CharacterController : MonoBehaviour
             if (wasFacingRight != facingRight)
             {
                 wasFacingRight = facingRight;
-
 
 
                 // Gira el personaje en su eje X
