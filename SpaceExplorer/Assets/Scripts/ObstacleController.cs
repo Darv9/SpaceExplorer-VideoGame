@@ -51,7 +51,7 @@ public class ObstacleController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<CombateJudador>().TomarDano(-20);
+            other.gameObject.GetComponent<CombateJudador>().TomarDano(20);
         }
     }
 }
