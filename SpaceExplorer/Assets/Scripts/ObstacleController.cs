@@ -47,4 +47,11 @@ public class ObstacleController : MonoBehaviour
             joint.motor = motor;
         }
     }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<CombateJudador>().TomarDano(-20);
+        }
+    }
 }
