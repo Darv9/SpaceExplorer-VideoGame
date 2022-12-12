@@ -46,13 +46,13 @@ public class Patrullar : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+   /* private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<CombateJudador>().TomarDano(20);
         }
-    }
+    }*/
 
 
 }

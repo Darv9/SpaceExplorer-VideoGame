@@ -16,8 +16,9 @@ public class CombateJudador : MonoBehaviour
 
     public void TomarDano(float dano)
     {
-        vida = vida-dano;
-       
+        vida -= dano;
+        barraDeVida.CambiarVidaActual(vida);
+
         if (vida <=0) {
             barraDeVida.CambiarVidaActual(vida);
             Destroy(gameObject);
